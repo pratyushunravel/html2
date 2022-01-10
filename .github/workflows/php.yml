@@ -10,8 +10,8 @@ jobs:
       - name: Reset Permissions before deployment
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USERNAME }}
+          host: 18.188.3.76
+          username: ubuntu
           key: ${{ secrets.SSH_KEY }}
           port: 22
           script: |
@@ -20,8 +20,8 @@ jobs:
             sudo setfacl -R -m u:www-data:rwx /var/www/html/html2/
       - uses: actions/checkout@v2           
         env:
-          HOST: ${{ secrets.SSH_HOST }}
-          USERNAME: ${{ secrets.SSH_USERNAME }}
+          HOST: 18.188.3.76
+          USERNAME: ubuntu
           PORT: 22
           KEY: ${{ secrets.SSH_KEY }}
         with:
@@ -31,8 +31,8 @@ jobs:
       - name: Reset Permissions after deployment
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USERNAME }}
+          host: 18.188.3.76
+          username: ubuntu
           key: ${{ secrets.SSH_KEY }}
           port: 22
           script: |
