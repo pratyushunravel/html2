@@ -17,7 +17,9 @@ jobs:
             sudo chmod -R 755 /var/www/html/html2/
             sudo chown -R ubuntu:ubuntu /var/www/html/html2/
             sudo setfacl -R -m u:www-data:rwx /var/www/html/html2/
-      - uses: actions/checkout@v2           
+      - uses: actions/checkout@v2    
+      - name: Deploy source-code
+        uses: appleboy/scp-action@master
         env:
           HOST: 18.188.3.76
           USERNAME: ubuntu
