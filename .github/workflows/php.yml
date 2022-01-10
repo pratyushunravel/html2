@@ -1,7 +1,7 @@
 name: Identifier Name
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   deploy:    
@@ -18,9 +18,7 @@ jobs:
             sudo chmod -R 755 /var/www/html/html2/
             sudo chown -R username:username /var/www/html/html2/
             sudo setfacl -R -m u:www-data:rwx /var/www/html/html2/
-
-      - uses: actions/checkout@v2      
-       
+      - uses: actions/checkout@v2           
         env:
           HOST: ${{ secrets.SSH_HOST }}
           USERNAME: ${{ secrets.SSH_USERNAME }}
