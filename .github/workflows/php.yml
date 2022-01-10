@@ -16,7 +16,7 @@ jobs:
           port: 22
           script: |
             sudo chmod -R 755 /var/www/html/html2/
-            sudo chown -R username:username /var/www/html/html2/
+            sudo chown -R ubuntu:ubuntu /var/www/html/html2/
             sudo setfacl -R -m u:www-data:rwx /var/www/html/html2/
       - uses: actions/checkout@v2           
         env:
@@ -38,4 +38,4 @@ jobs:
           script: |
             sudo chmod -R 755 /var/www/html/html2/
             sudo chown -R www-data:www-data /var/www/html/html2/
-            sudo setfacl -R -m u:username:rwx /var/www/html/html2/
+            sudo setfacl -R -m u:ubuntu:rwx /var/www/html/html2/
