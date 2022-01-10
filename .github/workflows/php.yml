@@ -15,9 +15,9 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           port: 22
           script: |
-            sudo chmod -R 755 /home/ubuntu
-            sudo chown -R username:username /home/ubuntu
-            sudo setfacl -R -m u:www-data:rwx /home/ubuntu
+            sudo chmod -R 755 /var/www/html/html2/
+            sudo chown -R username:username /var/www/html/html2/
+            sudo setfacl -R -m u:www-data:rwx /var/www/html/html2/
 
       - uses: actions/checkout@v2      
        
@@ -28,7 +28,7 @@ jobs:
           KEY: ${{ secrets.SSH_KEY }}
         with:
           source: "*"
-          target: "/home/ubuntu"
+          target: "/var/www/html/html2/"
 
       - name: Reset Permissions after deployment
         uses: appleboy/ssh-action@master
@@ -38,6 +38,6 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           port: 22
           script: |
-            sudo chmod -R 755 /home/ubuntu
-            sudo chown -R www-data:www-data /home/ubuntu
-            sudo setfacl -R -m u:username:rwx /home/ubuntu
+            sudo chmod -R 755 /var/www/html/html2/
+            sudo chown -R www-data:www-data /var/www/html/html2/
+            sudo setfacl -R -m u:username:rwx /var/www/html/html2/
