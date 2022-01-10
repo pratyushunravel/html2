@@ -4,10 +4,12 @@ git remote add origin https://github.com/pratyushunravel/html2.git
 
 git remote -v
 git add .
-git commit -m "first commit"
+git commit -m "nin commit"
 git push origin main
 
 ---     git pull --rebase origin main
 
 
-aws codecommit list-repositories help
+sudo git clone <addurlhere>
+cd dir
+sudo git pull
